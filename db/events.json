@@ -65,8 +65,8 @@
   },
   {
     "id": 10,
-    "title": "Bonus da fare",
-    "slug": "bonus-da-fare",
+    "title": "Bonus da fare o no?",
+    "slug": "bonus-da-fare-o-no",
     "description": "Ci sono un sacco di cose da fare come Bonus ma non so se ce la posso fare",
     "date": "2023-11-18",
     "maxSeats": 1

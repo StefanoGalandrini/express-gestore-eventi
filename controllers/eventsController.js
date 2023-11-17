@@ -104,10 +104,17 @@ function update(req, res)
 	let events = Event.getEvents();
 	let eventIndex = events.findIndex(e => e.id.toString() === id);
 
+	// updates only the fields that are present in the request body
+	// and regenerates the slug
 	if (eventIndex !== -1)
 	{
-		// updates only the fields that are present in the request body
 		const updatedData = req.body;
+
+		// checks if title has been modified
+		if (updatedData.title && updatedData.title !== events[eventIndex].title)
+		{
+			updatedData.slug = Event.createSlug(updatedData.title);
+		}
 		events[eventIndex] = { ...events[eventIndex], ...updatedData };
 		Event.saveEvent(events);
 		res.json({ message: "Evento aggiornato con successo", event: events[eventIndex] });
@@ -119,7 +126,7 @@ function update(req, res)
 
 
 /**
-	* Update method
+	* Destroy method
 	* retrieve the event by id and update it
 	* @param {express.Request} req
 	* @param {express.Response} res
