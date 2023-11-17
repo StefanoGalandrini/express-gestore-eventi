@@ -13,7 +13,27 @@ const { kebabCase } = require("lodash");
  */
 function index(req, res)
 {
-	const events = Event.getEvents();
+	let events = Event.getEvents();
+
+	// query string filters
+	const { title, description, date } = req.query;
+
+	if (title)
+	{
+		events = events.filter(event => event.title.toLowerCase().includes(title.toLowerCase()));
+	}
+
+	if (description)
+	{
+		events = events.filter(event => event.description.toLowerCase().includes(description.toLowerCase()));
+	}
+
+	if (date)
+	{
+		const filterDate = new Date(date);
+		events = events.filter(event => new Date(event.date) >= filterDate);
+	}
+
 	res.json(events);
 }
 
