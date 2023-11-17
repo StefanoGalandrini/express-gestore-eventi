@@ -1,0 +1,17 @@
+{
+  "name": "express-gestore-eventi",
+  "version": "1.0.0",
+  "description": "Creare delle API per un'applicazione che gestirà degli eventi con le relative prenotazioni.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "API",
+    "Router"
+  ],
+  "author": "Stefano Galandrini",
+  "license": "ISC"
+}
