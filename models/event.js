@@ -3,9 +3,9 @@ const path = require("path");
 
 class Event
 {
-	constructor(id, title, description, date, maxSeats)
+	constructor(title, description, date, maxSeats)
 	{
-		this.id = generateUniqueID();
+		this.id = Event.generateUniqueId();
 		this.title = title;
 		this.slug = Event.createSlug(title);
 		this.description = description;
@@ -19,7 +19,10 @@ class Event
 		return path.join(__dirname, "../db/events.json");
 	}
 
-	// static method to create a unique id for an event
+	/** static method to create a unique id for an event
+	* @param {string} title
+	* @returns {number} unique id
+	*/
 	static generateUniqueId()
 	{
 		const events = Event.getEvents();
@@ -27,7 +30,10 @@ class Event
 		return maxId + 1;
 	}
 
-	// static method to create a slug from a title
+	/** static method to create a slug from a title
+	* @param {string} title
+	* @return {number} unique id
+	*/
 	static createSlug(title)
 	{
 		let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');

@@ -25,7 +25,10 @@ function index(req, res)
  */
 function store(req, res)
 {
-	// todo
+	const { title, description, date, maxSeats } = req.body;
+	const newEvent = new Event(title, description, date, maxSeats);
+	Event.saveEvent(newEvent);
+	res.status(201).json(newEvent);
 }
 
 
