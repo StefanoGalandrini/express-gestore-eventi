@@ -117,9 +117,37 @@ function update(req, res)
 	}
 }
 
+
+/**
+	* Update method
+	* retrieve the event by id and update it
+	* @param {express.Request} req
+	* @param {express.Response} res
+ */
+function destroy(req, res)
+{
+	const { id } = req.params;
+	let events = Event.getEvents();
+	let eventIndex = events.findIndex(e => e.id.toString() === id);
+
+	if (eventIndex !== -1)
+	{
+		// deletes the event with the provided id from the array
+		events.splice(eventIndex, 1);
+		Event.saveEvent(events);
+
+		res.json({ message: "Evento cancellato con successo" });
+	} else
+	{
+		res.status(404).json({ message: "Evento non trovato" });
+	}
+}
+
+
 module.exports = {
 	index,
 	show,
 	store,
 	update,
+	destroy,
 };

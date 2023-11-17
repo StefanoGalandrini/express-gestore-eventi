@@ -16,6 +16,9 @@ router.post("/", eventsController.store);
 // route for method Update
 router.put("/:id", eventsController.update);
 
+// route for method Delete
+router.delete("/:id", eventsController.destroy);
+
 
 
 module.exports = router;

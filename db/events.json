@@ -48,14 +48,6 @@
     "maxSeats": 100000
   },
   {
-    "id": 7,
-    "title": "Esercizio tutto il giorno",
-    "slug": "esercizio-tutto-il-giorno",
-    "description": "Un esercizio che dura tutto il giorno riesce a distruggere almeno uno dei due neuroni rimasti",
-    "date": "2023-11-17",
-    "maxSeats": 100
-  },
-  {
     "id": 8,
     "title": "Esercizio tutto il giorno",
     "slug": "esercizio-tutto-il-giorno-1",
@@ -70,5 +62,13 @@
     "description": "Un esercizio che dura tutto il giorno riesce a distruggere almeno uno dei due neuroni rimasti",
     "date": "2023-11-17",
     "maxSeats": 100
+  },
+  {
+    "id": 10,
+    "title": "Bonus da fare",
+    "slug": "bonus-da-fare",
+    "description": "Ci sono un sacco di cose da fare come Bonus ma non so se ce la posso fare",
+    "date": "2023-11-18",
+    "maxSeats": 1
   }
 ]
