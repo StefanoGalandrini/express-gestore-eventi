@@ -7,6 +7,9 @@ const eventsController = require("../controllers/eventsController");
 // route for method Index
 router.get("/", eventsController.index);
 
+// route for method Show
+router.get("/:id", eventsController.show);
+
 // route for method Store
 router.post("/", eventsController.store);
 

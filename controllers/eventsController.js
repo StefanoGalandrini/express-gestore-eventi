@@ -7,7 +7,7 @@ const { kebabCase } = require("lodash");
 
 /**
 	* Index method
-	* Recupera e restituisce tutti gli eventi.
+	* retrieve all events from json db and return them
 	* @param {express.Request} req
 	* @param {express.Response} res
  */
@@ -16,6 +16,29 @@ function index(req, res)
 	const events = Event.getEvents();
 	res.json(events);
 }
+
+
+/**
+	* Show method
+	* Show a single event by id if exists
+	* @param {express.Request} req
+	* @param {express.Response} res
+ */
+function show(req, res)
+{
+	const { id } = req.params;
+	const events = Event.getEvents();
+	const event = events.find(e => e.id.toString() === id);
+
+	if (event)
+	{
+		res.json(event);
+	} else
+	{
+		res.status(404).json({ message: "Evento non trovato" });
+	}
+}
+
 
 /**
 	* Store method
@@ -45,6 +68,7 @@ function update(req, res)
 
 module.exports = {
 	index,
+	show,
 	store,
 	update,
 };
