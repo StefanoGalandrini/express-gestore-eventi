@@ -66,10 +66,10 @@ class Event
 
 	// static method to add an event to the json data file
 	// and then save the json data file
-	static saveEvent(event)
+	static saveEvent(events)
 	{
-		const events = Event.getEvents();
-		events.push(event);
+		// const events = Event.getEvents();
+		// events.push(event);
 		try
 		{
 			fs.writeFileSync(Event.filePath, JSON.stringify(events, null, 2), "utf8");

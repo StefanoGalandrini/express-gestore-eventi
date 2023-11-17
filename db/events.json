@@ -33,10 +33,18 @@
   },
   {
     "id": 5,
-    "title": "Fine del corso React",
+    "title": "Fine del corso Express+React",
     "slug": "fine-del-corso-react",
-    "description": "Al termine, cambiare prospettive sul futuro e cercare lavoro in altri settori",
+    "description": "Al termine, a causa di Express JS, cambiare prospettive sul futuro e cercare lavoro in altri settori",
     "date": "2023-12-18",
     "maxSeats": 1
+  },
+  {
+    "id": 6,
+    "title": "Istigazione al suicidio",
+    "slug": "istigazione-al-suicidio",
+    "description": "Quando scopri che un errore che ti blocca per un'ora dipende una virgola da togliere",
+    "date": "2023-11-17",
+    "maxSeats": 100000
   }
 ]

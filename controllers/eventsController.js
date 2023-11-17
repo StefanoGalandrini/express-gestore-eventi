@@ -50,8 +50,25 @@ function store(req, res)
 {
 	const { title, description, date, maxSeats } = req.body;
 	const newEvent = new Event(title, description, date, maxSeats);
-	Event.saveEvent(newEvent);
-	res.status(201).json(newEvent);
+	const events = Event.getEvents();
+
+	const newEventData = {
+		id: newEvent.id,
+		title: newEvent.title,
+		slug: newEvent.slug,
+		description: newEvent.description,
+		date: newEvent.date,
+		maxSeats: newEvent.maxSeats
+	};
+
+	console.log(newEventData);
+
+	events.push(newEventData);
+
+	console.log(events);
+
+	Event.saveEvent(events);
+	res.status(201).json(newEventData);
 }
 
 
@@ -63,7 +80,21 @@ function store(req, res)
  */
 function update(req, res)
 {
-	// todo
+	const { id } = req.params;
+	let events = Event.getEvents();
+	let eventIndex = events.findIndex(e => e.id.toString() === id);
+
+	if (eventIndex !== -1)
+	{
+		// updates only the fields that are present in the request body
+		const updatedData = req.body;
+		events[eventIndex] = { ...events[eventIndex], ...updatedData };
+		Event.saveEvent(events);
+		res.json({ message: "Evento aggiornato con successo", event: events[eventIndex] });
+	} else
+	{
+		res.status(404).json({ message: "Evento non trovato" });
+	}
 }
 
 module.exports = {
