@@ -5,6 +5,16 @@ class Event
 {
 	constructor(title, description, date, maxSeats)
 	{
+		if (!title || !description || !date || !maxSeats)
+		{
+			throw new Error("Mancano dei dati, impossibile creare l'evento");
+		}
+
+		if (typeof title !== "string" || typeof description !== "string" || typeof maxSeats !== "number" || typeof maxSeats <= 0)
+		{
+			throw new Error("Uno o più dati inseriti non sono in un formato accettabile");
+		}
+
 		this.id = Event.generateUniqueId();
 		this.title = title;
 		this.slug = Event.createSlug(title);
