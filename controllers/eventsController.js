@@ -1,9 +1,9 @@
 const express = require("express");
 const Event = require("../models/event");
-const fs = require("fs");
-const path = require("path");
-const events = require("../db/events");
-const { kebabCase } = require("lodash");
+// const fs = require("fs");
+// const path = require("path");
+// const events = require("../db/events");
+
 
 /**
 	* Index method

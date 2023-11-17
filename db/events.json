@@ -46,5 +46,29 @@
     "description": "Quando scopri che un errore che ti blocca per un'ora dipende una virgola da togliere",
     "date": "2023-11-17",
     "maxSeats": 100000
+  },
+  {
+    "id": 7,
+    "title": "Esercizio tutto il giorno",
+    "slug": "esercizio-tutto-il-giorno",
+    "description": "Un esercizio che dura tutto il giorno riesce a distruggere almeno uno dei due neuroni rimasti",
+    "date": "2023-11-17",
+    "maxSeats": 100
+  },
+  {
+    "id": 8,
+    "title": "Esercizio tutto il giorno",
+    "slug": "esercizio-tutto-il-giorno-1",
+    "description": "Un esercizio che dura tutto il giorno riesce a distruggere almeno uno dei due neuroni rimasti",
+    "date": "2023-11-17",
+    "maxSeats": 100
+  },
+  {
+    "id": 9,
+    "title": "Esercizio tutto il giorno",
+    "slug": "esercizio-tutto-il-giorno-2",
+    "description": "Un esercizio che dura tutto il giorno riesce a distruggere almeno uno dei due neuroni rimasti",
+    "date": "2023-11-17",
+    "maxSeats": 100
   }
 ]

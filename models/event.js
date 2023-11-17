@@ -40,9 +40,14 @@ class Event
 		let counter = 1;
 		const events = Event.getEvents();
 
+		// store original slug
+		const originalSlug = slug;
+
+		// check if slug already exists
+		// and add an incremental counter to the slug if exists
 		while (events.some(event => event.slug === slug))
 		{
-			slug = `${slug.split('-')[0]}-${counter}`;
+			slug = `${originalSlug}-${counter}`;
 			counter++;
 		}
 
