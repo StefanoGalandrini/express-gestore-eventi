@@ -12,10 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 // import routes
 const eventsRouter = require('./routers/eventsRouter');
 
-
 // use routes
 app.use('/events', eventsRouter);
-
 
 // import middleware
 const notFound404 = require('./middleware/notFound404');
