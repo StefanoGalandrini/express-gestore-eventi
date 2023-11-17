@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"slug": "uscita-dell-album-midnights-di-taylor-swift",
+		"title": "Uscita dell'album Midnights di Taylor Swift",
+		"description": "Il lancio dell'ultimo album di Taylor Swift, Midnights.",
+		"date": "2023-10-21",
+		"maxSeats": 1000
+	},
+	{
+		"id": 2,
+		"slug": "concerto-degli-u2-a-las-vegas",
+		"title": "Concerto degli U2 a Las Vegas",
+		"description": "Concerto live degli U2 a Las Vegas, un evento imperdibile.",
+		"date": "2023-11-05",
+		"maxSeats": 20000
+	},
+	{
+		"id": 3,
+		"slug": "organizzazione-di-una-vacanza",
+		"title": "Organizzazione di una vacanza",
+		"description": "Pianificazione di una vacanza in gruppo in una destinazione esotica.",
+		"date": "2024-01-15",
+		"maxSeats": 15
+	}
+]

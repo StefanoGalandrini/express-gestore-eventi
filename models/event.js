@@ -5,8 +5,9 @@ class Event
 {
 	constructor(id, title, description, date, maxSeats)
 	{
-		this.id = id;
+		this.id = generateUniqueID();
 		this.title = title;
+		this.slug = Event.createSlug(title);
 		this.description = description;
 		this.date = date;
 		this.maxSeats = maxSeats;
@@ -18,12 +19,37 @@ class Event
 		return path.join(__dirname, "../db/events.json");
 	}
 
+	// static method to create a unique id for an event
+	static generateUniqueId()
+	{
+		const events = Event.getEvents();
+		const maxId = events.reduce((max, event) => event.id > max ? event.id : max, 0);
+		return maxId + 1;
+	}
+
+	// static method to create a slug from a title
+	static createSlug(title)
+	{
+		let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+		let counter = 1;
+		const events = Event.getEvents();
+
+		while (events.some(event => event.slug === slug))
+		{
+			slug = `${slug.split('-')[0]}-${counter}`;
+			counter++;
+		}
+
+		return slug;
+	}
+
+
 	// static method to get all events
 	static getEvents()
 	{
 		try
 		{
-			const data = fs.readFileSync(filePath, "utf8");
+			const data = fs.readFileSync(Event.filePath, "utf8");
 			return JSON.parse(data);
 		} catch (error)
 		{
@@ -40,7 +66,7 @@ class Event
 		events.push(event);
 		try
 		{
-			fs.writeFileSync(filePath, JSON.stringify(events, null, 2), "utf8");
+			fs.writeFileSync(Event.filePath, JSON.stringify(events, null, 2), "utf8");
 		} catch (error)
 		{
 			console.log("Errore nel salvataggio dell'evento:", error);
